@@ -1,13 +1,22 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+import java.util.Locale;
+import java.util.Scanner;
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+public class Main {
+    public static void main(String[] args) {
+        // Set locale to US to properly read floating-point numbers with standard decimal point (.)
+        Locale.setDefault(Locale.US);
+        
+        Scanner scanner = new Scanner(System.in);
+
+        int employeeNumber = scanner.nextInt();
+        int workedHours = scanner.nextInt();
+        double hourlyRate = scanner.nextDouble();
+
+        double salary = workedHours * hourlyRate;
+
+        System.out.printf("NUMBER = %d\n", employeeNumber);
+        System.out.printf("SALARY = U$ %.2f\n", salary);
+
+        scanner.close();
     }
 }
